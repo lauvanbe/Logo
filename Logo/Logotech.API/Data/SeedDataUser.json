@@ -1,0 +1,57 @@
+[
+    {
+      "Username": "Terry",
+      "Password": "password",
+      "Inami": 2617,
+      "Nom": "Henson",
+      "Prenom": "Terry",
+      "Email": "terryhenson@comtrail.com",
+      "TelFixe": 66787632,
+      "Gsm": 887705722,
+      "Deplacement": true
+    },
+    {
+      "Username": "Selena",
+      "Password": "password",
+      "Inami": 4334,
+      "Nom": "Fernandez",
+      "Prenom": "Selena",
+      "Email": "selenafernandez@comtrail.com",
+      "TelFixe": 67620079,
+      "Gsm": 750240585,
+      "Deplacement": true
+    },
+    {
+      "Username": "Carole",
+      "Password": "password",
+      "Inami": 3130,
+      "Nom": "Hunt",
+      "Prenom": "Carole",
+      "Email": "carolehunt@comtrail.com",
+      "TelFixe": 50472445,
+      "Gsm": 672838476,
+      "Deplacement": false
+    },
+    {
+      "Username": "Beryl",
+      "Password": "password",
+      "Inami": 7762,
+      "Nom": "Harrison",
+      "Prenom": "Beryl",
+      "Email": "berylharrison@comtrail.com",
+      "TelFixe": 38653318,
+      "Gsm": 703195692,
+      "Deplacement": true
+    },
+    {
+      "Username": "Marietta",
+      "Password": "password",
+      "Inami": 3937,
+      "Nom": "Todd",
+      "Prenom": "Marietta",
+      "Email": "mariettatodd@comtrail.com",
+      "TelFixe": 23127613,
+      "Gsm": 389447009,
+      "Deplacement": false
+    }
+  ]
