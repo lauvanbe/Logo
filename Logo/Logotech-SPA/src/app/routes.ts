@@ -14,8 +14,9 @@ import { PatientEditComponent } from './patients/patient-edit/patient-edit.compo
 import { PatientEditResolver } from './_resolvers/patient-edit.resolver';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { UserEditComponent } from './users/user-edit/user-edit.component';
-import { UserDetailResolver } from './_resolvers/user-detail.resolver.1';
 import { UserEditResolver } from './_resolvers/user-edit.resolver';
+import { PraticienEditResolver } from './_resolvers/praticien-edit.resolver';
+import { PraticienEditComponent } from './praticiens/praticien-edit/praticien-edit.component';
 
 export const appRoutes: Routes = [
     { path: '', component: HomeComponent},
@@ -29,6 +30,8 @@ export const appRoutes: Routes = [
                 resolve: { praticiens: PraticienListeResolver }},
             { path: 'liste-praticiens/:id', component: PraticienDetailComponent,
                 resolve: { praticien: PraticienDetailResolver }},
+            { path: 'liste-praticiens/edit/:id', component: PraticienEditComponent,
+                resolve: { praticien: PraticienEditResolver }, canDeactivate: [PreventUnsavedChanges]},
             { path: 'liste-patients', component: ListePatientsComponent,
                 resolve: { patients: PatientListeResolver }},
             { path: 'liste-patients/:id', component: PatientDetailComponent,

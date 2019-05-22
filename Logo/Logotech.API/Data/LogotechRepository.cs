@@ -32,7 +32,7 @@ namespace Logotech.API.Data
 
         public async Task<Patient> GetPatient(int id)
         {
-            var patient = await _context.Patients.Include(a => a.Adresse).Include(p => p.Photos).FirstOrDefaultAsync(p => p.Id == id);
+            var patient = await _context.Patients.Include(d => d.Docteur).Include(p => p.Photos).FirstOrDefaultAsync(p => p.Id == id);
 
             return patient;
         }

@@ -16,7 +16,7 @@ namespace Logotech.API.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.2.1-servicing-10028");
 
-            modelBuilder.Entity("Logotech.API.Models.Adresse", b =>
+            modelBuilder.Entity("Logotech.API.Models.Docteur", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -24,35 +24,6 @@ namespace Logotech.API.Migrations
                     b.Property<int?>("BoitePostal");
 
                     b.Property<int>("CodePostal");
-
-                    b.Property<int>("NumeroRue");
-
-                    b.Property<int>("PatientId");
-
-                    b.Property<string>("Pays")
-                        .IsRequired()
-                        .HasMaxLength(55);
-
-                    b.Property<string>("Rue")
-                        .IsRequired()
-                        .HasMaxLength(55);
-
-                    b.Property<string>("Ville")
-                        .IsRequired()
-                        .HasMaxLength(55);
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PatientId")
-                        .IsUnique();
-
-                    b.ToTable("Adresses");
-                });
-
-            modelBuilder.Entity("Logotech.API.Models.Docteur", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("Email")
                         .IsRequired();
@@ -68,7 +39,17 @@ namespace Logotech.API.Migrations
                         .IsRequired()
                         .HasMaxLength(55);
 
+                    b.Property<int>("NumeroRue");
+
+                    b.Property<string>("Pays")
+                        .IsRequired()
+                        .HasMaxLength(55);
+
                     b.Property<string>("Prenom")
+                        .IsRequired()
+                        .HasMaxLength(55);
+
+                    b.Property<string>("Rue")
                         .IsRequired()
                         .HasMaxLength(55);
 
@@ -76,6 +57,10 @@ namespace Logotech.API.Migrations
                         .HasMaxLength(55);
 
                     b.Property<int?>("TelFixe");
+
+                    b.Property<string>("Ville")
+                        .IsRequired()
+                        .HasMaxLength(55);
 
                     b.HasKey("Id");
 
@@ -89,27 +74,54 @@ namespace Logotech.API.Migrations
 
                     b.Property<string>("Anamnese");
 
+                    b.Property<int?>("BoitePostal");
+
+                    b.Property<int>("CodePostal");
+
                     b.Property<string>("Commentaire");
 
                     b.Property<DateTime>("DateNaissance");
 
-                    b.Property<string>("Email");
+                    b.Property<int>("DocteurId");
+
+                    b.Property<string>("Email")
+                        .IsRequired();
 
                     b.Property<int?>("Gsm");
 
                     b.Property<string>("Lateralite");
 
-                    b.Property<string>("Nom");
+                    b.Property<string>("Nom")
+                        .IsRequired()
+                        .HasMaxLength(55);
+
+                    b.Property<int>("NumeroRue");
+
+                    b.Property<string>("Pays")
+                        .IsRequired()
+                        .HasMaxLength(55);
 
                     b.Property<string>("PersonneContact");
 
-                    b.Property<string>("Prenom");
+                    b.Property<string>("Prenom")
+                        .IsRequired()
+                        .HasMaxLength(55);
+
+                    b.Property<string>("Rue")
+                        .IsRequired()
+                        .HasMaxLength(55);
 
                     b.Property<int?>("TelContact");
 
                     b.Property<int?>("TelFixe");
 
+                    b.Property<string>("Ville")
+                        .IsRequired()
+                        .HasMaxLength(55);
+
                     b.HasKey("Id");
+
+                    b.HasIndex("DocteurId");
 
                     b.ToTable("Patients");
                 });
@@ -174,11 +186,11 @@ namespace Logotech.API.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("Logotech.API.Models.Adresse", b =>
+            modelBuilder.Entity("Logotech.API.Models.Patient", b =>
                 {
-                    b.HasOne("Logotech.API.Models.Patient", "Patient")
-                        .WithOne("Adresse")
-                        .HasForeignKey("Logotech.API.Models.Adresse", "PatientId")
+                    b.HasOne("Logotech.API.Models.Docteur", "Docteur")
+                        .WithMany()
+                        .HasForeignKey("DocteurId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

@@ -1,4 +1,3 @@
-import { Adresse } from './adresse';
 
 export interface Docteur {
     id: number;
@@ -10,4 +9,10 @@ export interface Docteur {
     gsm: number;
     specialisation: string;
     fonction: string;
+    rue: string;
+    numeroRue: number;
+    boitePostal: number;
+    codePostal: number;
+    ville: string;
+    pays: string;
 }

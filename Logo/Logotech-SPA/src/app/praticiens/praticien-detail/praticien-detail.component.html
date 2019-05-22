@@ -1,38 +1,32 @@
 <div class="container mt-4">
   <div class="row">
-    <h1>Update du profil de {{ praticien.prenom }} {{ praticien.nom }}</h1>
+      <h1>Détail du docteur: {{ praticien.prenom }} {{ praticien.nom }}</h1>
   </div>
   <div class="row">
     <div class="col-sm-4">
       <div class="card">
+        <img class="card-img-top img-thumbnail" src="/assets/ImageSite/docteur.jpg" alt="{{ praticien.nom }}">
         <div class="card-body">
           <div>
-            <strong>Nom:</strong>
-            <p>{{ praticien.nom }}</p>
+            <strong>Données personnelles:</strong>
+            <ul>
+              <li>Nom: {{ praticien.nom }}</li>
+              <li>Prénom: {{ praticien.prenom }}</li>
+              <li>Email: {{ praticien.email}}</li>
+              <li>Téléphone fixe: {{ praticien.telFixe }}</li>
+              <li>Gsm: {{ praticien.gsm }}</li>
+              <li>Spécialisation: {{ praticien.specialisation }}</li>
+              <li>Fonction: {{ praticien.fonction }}</li>
+            </ul>
           </div>
           <div>
-            <strong>Prénom:</strong>
-            <p>{{ praticien.prenom }}</p>
-          </div>
-          <div>
-            <strong>Email:</strong>
-            <p>{{ praticien.email }}</p>
-          </div>
-          <div>
-            <strong>Fonction:</strong>
-            <p>{{ praticien.fonction }}</p>
-          </div>
-          <div>
-            <strong>Spécialisation:</strong>
-            <p>{{ praticien.specialisation }}</p>
-          </div>
-          <div>
-            <strong>Téléphone fixe:</strong>
-            <p>{{ praticien.telFixe }}</p>
-          </div>
-          <div>
-            <strong>Gsm:</strong>
-            <p>{{ praticien.gsm }}</p>
+            <strong>Adresse:</strong>
+            <ul>
+              <li>Rue: {{ praticien.rue}}, {{ praticien.numeroRue}}</li>
+              <li>Boite postal: {{ praticien.boitePostal}}</li>
+              <li>Ville: {{ praticien.codePostal }}, {{ praticien.ville }}</li>
+              <li>Pays: {{ praticien.pays}}</li>
+            </ul>
           </div>
       </div>
     </div>

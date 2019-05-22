@@ -20,8 +20,15 @@ namespace Logotech.API.Dtos
         public string Anamnese { get; set; }
         public String Lateralite { get; set; }
         public string Commentaire { get; set; }
-        public AdresseForDetailDto Adresse { get; set; }
+        public string Rue { get; set; }
+        public int NumeroRue { get; set; }
+        public int? BoitePostal { get; set; }
+        public int CodePostal { get; set; }
+        public string Ville { get; set; }
+        public string Pays { get; set; }
+        public DocteurForPatientDetailDto Docteur { get; set; }    
         public string PhotoUrl { get; set; }
         public ICollection<PhotoForDetailDto> Photos { get; set; }
+        
     }
 }

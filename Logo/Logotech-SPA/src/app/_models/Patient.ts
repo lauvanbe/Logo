@@ -1,4 +1,3 @@
-import { Adresse } from './adresse';
 import { Photo } from './photo';
 
 export interface Patient {
@@ -11,10 +10,15 @@ export interface Patient {
     anamnese: string;
     lateralite: string;
     commentaire: string;
-    adresse: Adresse;
     photoUrl: string;
     telContact?: number;
     telFixe?: number;
     gsm?: number;
+    rue: string;
+    numeroRue: number;
+    boitePostal: number;
+    codePostal: number;
+    ville: string;
+    pays: string;
     photos?: Photo[];
 }

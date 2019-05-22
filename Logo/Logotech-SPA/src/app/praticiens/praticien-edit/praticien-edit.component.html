@@ -1,0 +1,82 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-sm-8">
+        <h1>Modification des données de {{ praticien.prenom }} {{ praticien.nom }}</h1>
+    </div>
+    <div class="col-sm-8">
+      <div *ngIf="editForm.dirty" class="alert alert-info">
+        <strong>Information: </strong> Vous avez fait des modifications. Toutes modifications qui ne seront pas sauvegardées seront perdues!
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="card">
+        <img class="card-img-top img-thumbnail" src="/assets/ImageSite/docteur.jpg" alt="{{ praticien.nom }}">
+        <div class="card-body">
+          <div>
+            <strong>Données personnelles:</strong>
+            <ul>
+              <li>Nom: {{ praticien.nom }}</li>
+              <li>Prénom: {{ praticien.prenom }}</li>
+              <li>Email: {{ praticien.email}}</li>
+              <li>Téléphone fixe: {{ praticien.telFixe }}</li>
+              <li>Gsm: {{ praticien.gsm }}</li>
+              <li>Spécialisation: {{ praticien.specialisation }}</li>
+              <li>Fonction: {{ praticien.fonction }}</li>
+            </ul>
+          </div>
+          <div>
+            <strong>Adresse:</strong>
+            <ul>
+              <li>Rue: {{ praticien.rue }}, {{ praticien.numeroRue }}</li>
+              <li>Boite postal: {{ praticien.boitePostal }}</li>
+              <li>Ville: {{ praticien.codePostal }}, {{ praticien.ville }}</li>
+              <li>Pays: {{ praticien.pays }}</li>
+            </ul>
+          </div>
+      </div>
+      <div class="card-footer">
+        <button [disabled]="!editForm.dirty" form="editForm" class="btn btn-success btn-block">Sauvegarder</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-8">
+    <div class="tab-panel">
+      <form #editForm="ngForm" id="editForm" (ngSubmit)="updatePraticien()">
+        <tabset class="praticien-tabset">
+          <tab heading="Personnelles">
+              <h5><label for="nom">Nom: </label></h5>
+              <input type="text" class="form-control" name="nom" [(ngModel)]="praticien.nom">
+              <h5><label for="prenom">Prénom: </label></h5>
+              <input type="text" class="form-control" name="prenom" [(ngModel)]="praticien.prenom">
+              <h5><label for="email">Email: </label></h5>
+              <input type="text" class="form-control" name="email" [(ngModel)]="praticien.email">
+              <h5><label for="telFixe">Téléphone fixe: </label></h5>
+              <input type="text" class="form-control" name="telFixe" [(ngModel)]="praticien.telFixe">
+              <h5><label for="gsm">Gsm: </label></h5>
+              <input type="text" class="form-control" name="gsm" [(ngModel)]="praticien.gsm">
+              <h5><label for="specialisation">Spécialisation: </label></h5>
+              <input type="text" class="form-control" name="specialisation" [(ngModel)]="praticien.specialisation">
+              <h5><label for="fonction">Fonction: </label></h5>
+              <input type="text" class="form-control" name="fonction" [(ngModel)]="praticien.fonction">
+          </tab>
+          <tab heading="Adresse">
+                  <h5><label for="rue">Rue: </label></h5>
+                  <input type="text" class="form-control" name="rue" [(ngModel)]="praticien.rue">
+                  <h5><label for="numeroRue">Numéro de maison: </label></h5>
+                  <input type="text" class="form-control" name="numeroRue" [(ngModel)]="praticien.numeroRue">
+                  <h5><label for="boitePostal">Boîte postal: </label></h5>
+                  <input type="text" class="form-control" name="boitePsotal" [(ngModel)]="praticien.boitePostal">
+                  <h5><label for="ville">Ville: </label></h5>
+                  <input type="text" class="form-control" name="ville" [(ngModel)]="praticien.ville">
+                  <h5><label for="pays">Pays: </label></h5>
+                  <input type="text" class="form-control" name="pays" [(ngModel)]="praticien.pays">
+          </tab>
+        </tabset>
+      </form>
+    </div>
+  </div>
+</div>
+
+

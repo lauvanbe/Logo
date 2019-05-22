@@ -1,7 +1,7 @@
 <div class="container mt-4">
   <div class="row">
-    <div class="col-sm-4">
-        <h1>Profil de {{ patient.prenom }} {{ patient.nom }}</h1>
+    <div class="col-sm-8">
+        <h1>Modification des données de {{ patient.prenom }} {{ patient.nom }}</h1>
     </div>
     <div class="col-sm-8">
       <div *ngIf="editForm.dirty" class="alert alert-info">
@@ -39,10 +39,10 @@
           <div>
             <strong>Adresse:</strong>
             <ul>
-              <li>Rue: {{ patient.adresse.rue}}, {{ patient.adresse.numeroRue}}</li>
-              <li>Boite postal: {{ patient.adresse.boitePostal}}</li>
-              <li>Ville: {{ patient.adresse.codePostal }}, {{ patient.adresse.ville }}</li>
-              <li>Pays: {{ patient.adresse.pays}}</li>
+              <li>Rue: {{ patient.rue}}, {{ patient.numeroRue}}</li>
+              <li>Boite postal: {{ patient.boitePostal}}</li>
+              <li>Ville: {{ patient.codePostal }}, {{ patient.ville }}</li>
+              <li>Pays: {{ patient.pays}}</li>
             </ul>
           </div>
       </div>
@@ -81,15 +81,15 @@
       </tab>
       <tab heading="Adresse">
               <h5><label for="rue">Rue: </label></h5>
-              <input type="text" class="form-control" name="rue" [(ngModel)]="patient.adresse.rue">
+              <input type="text" class="form-control" name="rue" [(ngModel)]="patient.rue">
               <h5><label for="numeroRue">Numéro de maison: </label></h5>
-              <input type="text" class="form-control" name="numeroRue" [(ngModel)]="patient.adresse.numeroRue">
+              <input type="text" class="form-control" name="numeroRue" [(ngModel)]="patient.numeroRue">
               <h5><label for="boitePostal">Boîte postal: </label></h5>
-              <input type="text" class="form-control" name="boitePsotal" [(ngModel)]="patient.adresse.boitePostal">
+              <input type="text" class="form-control" name="boitePsotal" [(ngModel)]="patient.boitePostal">
               <h5><label for="ville">Ville: </label></h5>
-              <input type="text" class="form-control" name="ville" [(ngModel)]="patient.adresse.ville">
+              <input type="text" class="form-control" name="ville" [(ngModel)]="patient.ville">
               <h5><label for="pays">Pays: </label></h5>
-              <input type="text" class="form-control" name="pays" [(ngModel)]="patient.adresse.pays">
+              <input type="text" class="form-control" name="pays" [(ngModel)]="patient.pays">
       </tab>
       <tab heading="Anamnése">
             <h5><label for="anamnese">Anamnèse: </label></h5>

@@ -1,4 +1,3 @@
-import { Adresse } from './adresse';
 
 export interface User {
   id: number;
@@ -7,7 +6,6 @@ export interface User {
   prenom: string;
   email: string;
   deplacement: string;
-  adresse: Adresse;
   telFixe?: number;
   gsm?: number;
 }

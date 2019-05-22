@@ -1,3 +1,4 @@
+import { PraticienEditComponent } from './praticiens/praticien-edit/praticien-edit.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -37,6 +38,7 @@ import { PhotoEditorComponent } from './patients/photo-editor/photo-editor.compo
 import { UserEditComponent } from './users/user-edit/user-edit.component';
 import { UserEditResolver } from './_resolvers/user-edit.resolver';
 import { UserDetailResolver } from './_resolvers/user-detail.resolver.1';
+import { PraticienEditResolver } from './_resolvers/praticien-edit.resolver';
 
 
 
@@ -59,6 +61,7 @@ export function tokenGetter() {
       ListePraticiensComponent,
       PraticienCardComponent,
       PraticienDetailComponent,
+      PraticienEditComponent,
       AgendaComponent,
       PhotoEditorComponent
    ],
@@ -91,6 +94,7 @@ export function tokenGetter() {
       PraticienService,
       PraticienDetailResolver,
       PraticienListeResolver,
+      PraticienEditResolver,
       PatientService,
       PatientListeResolver,
       PatientDetailResolver,
