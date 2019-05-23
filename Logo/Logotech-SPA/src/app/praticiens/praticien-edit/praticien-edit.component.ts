@@ -30,7 +30,7 @@ export class PraticienEditComponent implements OnInit {
 
   updatePraticien() {
     this.praticienService.updateDocteur(this.praticien.id, this.praticien).subscribe(next => {
-      this.alertify.success('Le profil a bien été mis à jour');
+      this.alertify.success('Le docteur a bien été mis à jour');
       this.editForm.reset(this.praticien);
     }, error => {
       this.alertify.error(error);

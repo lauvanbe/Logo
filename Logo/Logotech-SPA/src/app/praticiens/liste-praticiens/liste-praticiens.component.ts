@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Docteur } from '../../_models/docteur';
 import { PraticienService } from '../../_services/praticien.service';
 import { AlertifyService } from '../../_services/alertify.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-liste-praticiens',
@@ -13,7 +13,8 @@ export class ListePraticiensComponent implements OnInit {
   praticiens: Docteur[];
   praticien: string;
 
-  constructor(private praticienService: PraticienService, private alertify: AlertifyService, private route: ActivatedRoute) { }
+  constructor(private praticienService: PraticienService, private alertify: AlertifyService,
+    private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.route.data.subscribe(data => {
