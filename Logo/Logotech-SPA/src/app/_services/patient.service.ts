@@ -37,7 +37,7 @@ export class PatientService {
       return this.http.delete(this.baseUrl + 'patients/' + patientId + '/photos/' + id);
     }
 
-    deletPatient(id: number) {
+    deletePatient(id: number) {
       return this.http.delete(this.baseUrl + 'patients/' + id);
     }
 }

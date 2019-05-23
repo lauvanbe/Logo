@@ -1,3 +1,4 @@
+import { PraticienAddComponent } from './praticiens/praticien-add/praticien-add.component';
 import { PraticienEditComponent } from './praticiens/praticien-edit/praticien-edit.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -62,6 +63,7 @@ export function tokenGetter() {
       PraticienCardComponent,
       PraticienDetailComponent,
       PraticienEditComponent,
+      PraticienAddComponent,
       AgendaComponent,
       PhotoEditorComponent
    ],
