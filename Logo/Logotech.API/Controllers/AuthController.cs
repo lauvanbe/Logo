@@ -1,4 +1,4 @@
-/* Contrôleur reprennant les méthodes d'authentification des logopèdes */
+/* Contrôleur reprennant les méthodes d'authentification des utilisateurs */
 
 using System;
 using System.IdentityModel.Tokens.Jwt;
@@ -30,6 +30,8 @@ namespace Logotech.API.Controllers
             _config = config;
         }
 
+//Méthode d'enregistrement d'un utilisateur
+
         [HttpPost("register")]
         public async Task<IActionResult> Register(UserForRegisterDto userForRegisterDto)
         {
@@ -46,6 +48,8 @@ namespace Logotech.API.Controllers
 
             return CreatedAtRoute("GetUser", new {controller = "Users", id = createdUser.Id}, userToReturn);
         }
+
+//Méthode de login d'un utilisateur
 
         [HttpPost("login")]
         public async Task<IActionResult> Login(UserForLoginDto userForLoginDto)

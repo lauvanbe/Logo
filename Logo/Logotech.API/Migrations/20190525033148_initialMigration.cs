@@ -89,7 +89,7 @@ namespace Logotech.API.Migrations
                         column: x => x.DocteurId,
                         principalTable: "Docteurs",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
